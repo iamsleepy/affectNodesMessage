@@ -129,7 +129,7 @@ MStatus affects::compute( const MPlug& plug, MDataBlock& data )
 	return MStatus::kSuccess;
 }
 
-// Create an attribute change callback on the camera when connection is made
+// Create a node plug dirty callback on the camera when connection is made
 MStatus affects::connectionMade( const MPlug& plug, const MPlug& otherPlug, bool asSrc )
 {
 	if(plug == inputCamera)
@@ -163,7 +163,7 @@ MStatus affects::connectionMade( const MPlug& plug, const MPlug& otherPlug, bool
 	return MPxNode::connectionMade(plug, otherPlug, asSrc);
 }
 
-// Remove callback when connection is broken.
+// Remove callbacks when connection is broken.
 MStatus affects::connectionBroken( const MPlug& plug, const MPlug& otherPlug, bool asSrc )
 {
 	if(plug == inputCamera)
